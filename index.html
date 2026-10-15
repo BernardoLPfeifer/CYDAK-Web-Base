@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Base visual reutilizável para projetos Cydak: cores, tipografia e componentes.">
+  <title>CYDAK | Base para novos projetos</title>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/appearance.js"></script>
+  <link rel="stylesheet" href="assets/css/cydak.css">
+  <link rel="stylesheet" href="assets/css/sidebar.css">
+  <link rel="stylesheet" href="assets/css/appearance.css">
+  <link rel="stylesheet" href="assets/css/visual-styles.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+  <script src="assets/js/sidebar.js" defer></script>
+  <script src="assets/js/dashboard.js" defer></script>
+</head>
+<body>
+  <a class="cy-skip" href="#conteudo">Ir para o conteúdo</a>
+  <div class="cy-app">
+  <aside class="cy-sidebar" aria-label="Menu lateral">
+    <div class="cy-sidebar__brand"><a class="cy-brand" href="#conteudo" aria-label="Cydak Dev — início"><span class="cy-brand__icon"><img src="assets/brand/icone-c.svg" alt="" width="512" height="512"></span><span class="cy-brand__logo"><img src="assets/brand/cydak-dev.svg" alt="" width="1000" height="180"></span></a><button class="cy-sidebar__toggle" type="button" aria-controls="menu-lateral" aria-expanded="true" aria-label="Recolher menu" title="Recolher menu" hidden><svg class="cy-sidebar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button></div>
+    <nav class="cy-sidebar__nav" id="menu-lateral" aria-label="Navegação principal"><a class="cy-sidebar__link" href="#conteudo" title="Início"><svg class="cy-sidebar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></svg><span class="cy-sidebar__label">Início</span></a><p class="cy-sidebar__section">Base visual</p><a class="cy-sidebar__link" href="#estrutura" title="Estrutura"><svg class="cy-sidebar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span class="cy-sidebar__label">Estrutura</span></a><a class="cy-sidebar__link" href="#identidade" title="Identidade"><svg class="cy-sidebar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg><span class="cy-sidebar__label">Identidade</span></a><details class="cy-sidebar__group"><summary title="Componentes"><svg class="cy-sidebar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-14-2 18"/></svg><span class="cy-sidebar__label">Componentes</span><svg class="cy-sidebar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></summary><div class="cy-sidebar__submenu"><a class="cy-sidebar__link" href="#componentes" title="Visão geral"><svg class="cy-sidebar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span class="cy-sidebar__label">Visão geral</span></a><a class="cy-sidebar__link" href="#uso" title="Como reutilizar"><svg class="cy-sidebar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v16M3 3l9 2 9-2v16l-9 2-9-2Z"/></svg><span class="cy-sidebar__label">Como reutilizar</span></a></div></details><p class="cy-sidebar__section">Demonstração</p><a class="cy-sidebar__link" href="#dashboard" title="Dashboard"><svg class="cy-sidebar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 3v17h17M8 16v-5m5 5V6m5 10V9"/></svg><span class="cy-sidebar__label">Dashboard</span></a></nav>
+    <div class="cy-sidebar__footer"><span class="cy-sidebar__caption">CYDAK · Base web</span><button class="cy-button cy-button--outline cy-theme-toggle" type="button" data-theme-toggle hidden>Modo escuro</button><button class="cy-appearance-open" type="button" data-appearance-open aria-haspopup="dialog" aria-controls="aparencia" aria-label="Personalizar aparência" title="Personalizar aparência" hidden><svg class="cy-sidebar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg><span>Aparência</span></button></div>
+  </aside>
+  <div class="cy-app__content">
+  <main id="conteudo">
+
+
+    <section class="cy-hero" aria-labelledby="titulo">
+      <div class="cy-container cy-hero__grid">
+        <div>
+          <span class="cy-eyebrow">Tecnologia &amp; automação industrial</span>
+          <h1 id="titulo">Uma identidade.<br>Novas <span class="cy-hero__accent">possibilidades.</span></h1>
+          <p>Um ponto de partida consistente para transformar ideias em experiências digitais com a identidade Cydak.</p>
+          <div class="cy-actions"><a class="cy-button cy-button--accent" href="#componentes">Explorar componentes <span aria-hidden="true">&nbsp;↗</span></a><a class="cy-button cy-button--outline" href="#identidade">Conhecer a identidade</a></div>
+        </div>
+        <aside class="cy-panel" aria-label="Resumo da base visual">
+          <span class="cy-eyebrow">Base visual / 01</span>
+          <h2>Feita para<br>construir.</h2>
+          <div class="cy-panel__row"><span>Títulos com presença</span><strong>Days One</strong></div>
+          <div class="cy-panel__row"><span>Leitura com clareza</span><strong>Poppins</strong></div>
+          <div class="cy-panel__row"><span>Identidade em cada detalhe</span><strong>Azul + laranja</strong></div>
+        </aside>
+      </div>
+    </section>
+    <section class="cy-section" id="estrutura" aria-labelledby="estrutura-titulo">
+      <div class="cy-container">
+        <span class="cy-eyebrow">O próximo projeto começa aqui</span>
+        <h2 id="estrutura-titulo">Consistência em cada interface.</h2>
+        <p class="cy-muted">Uma estrutura simples, flexível e pronta para receber o seu conteúdo.</p>
+        <div class="cy-grid">
+          <article class="cy-card"><span class="cy-card__index">01</span><h3>Identidade</h3><p>Paleta e tipografia compartilhadas para manter a mesma linguagem entre projetos.</p><a href="#identidade">Ver o padrão visual →</a></article>
+          <article class="cy-card"><span class="cy-card__index">02</span><h3>Componentes</h3><p>Botões, cartões e campos que podem ser combinados em diferentes interfaces.</p><a href="#componentes">Explorar a base →</a></article>
+          <article class="cy-card"><span class="cy-card__index">03</span><h3>Flexibilidade</h3><p>Layouts que se adaptam a telas pequenas e grandes, com navegação por teclado.</p><a href="#uso">Como reutilizar →</a></article>
+        </div>
+        <div class="cy-brand-guide" aria-labelledby="marca-estrutura-titulo">
+          <h3 id="marca-estrutura-titulo">Uma marca, dois elementos independentes.</h3>
+          <p class="cy-muted">A <code>cy-brand</code> organiza o ícone e o logotipo lado a lado. Cada elemento tem seu próprio SVG, tamanho e fundo branco, mantendo a legibilidade em todas as paletas e estilos.</p>
+          <div class="cy-brand-guide__grid">
+            <article class="cy-card"><h3>Ícone · &lt;C&gt;</h3><div class="cy-brand-guide__preview"><img class="cy-brand-guide__icon" src="assets/brand/icone-c.svg" alt="Ícone Cydak: letra C azul entre sinais angulares laranja" width="512" height="512" loading="lazy"></div><p><code>cy-brand__icon</code> identifica a marca em espaços pequenos. Pode ser reutilizado sozinho em atalhos e versões compactas.</p><a href="assets/brand/icone-c.svg" target="_blank" rel="noopener">Ver SVG do ícone ↗</a> · <a href="assets/brand/icone-c.svg" download>Baixar</a></article>
+            <article class="cy-card"><h3>Logotipo · CYDAK DEV</h3><div class="cy-brand-guide__preview"><img class="cy-brand-guide__logo" src="assets/brand/cydak-dev.svg" alt="Logotipo CYDAK em azul e DEV em laranja" width="1000" height="180" loading="lazy"></div><p><code>cy-brand__logo</code> apresenta o nome da marca. Sua largura pode ser ajustada sem alterar o tamanho do ícone.</p><a href="assets/brand/cydak-dev.svg" target="_blank" rel="noopener">Ver SVG do logotipo ↗</a> · <a href="assets/brand/cydak-dev.svg" download>Baixar</a></article>
+          </div>
+          <p class="cy-note">Os SVGs têm a fonte Days One incorporada. Para trocar a marca, substitua cada arquivo separadamente e atualize o nome acessível do link. Preserve as proporções das imagens.</p>
+          <details class="cy-details"><summary>Como montar a marca no HTML</summary><pre class="cy-brand-guide__code"><code>&lt;a class="cy-brand" href="#conteudo" aria-label="Cydak Dev — início"&gt;
+  &lt;span class="cy-brand__icon"&gt;
+    &lt;img src="assets/brand/icone-c.svg" alt="" width="512" height="512"&gt;
+  &lt;/span&gt;
+  &lt;span class="cy-brand__logo"&gt;
+    &lt;img src="assets/brand/cydak-dev.svg" alt="" width="1000" height="180"&gt;
+  &lt;/span&gt;
+&lt;/a&gt;</code></pre></details>
+        </div>
+      </div>
+    </section>
+    <section class="cy-section cy-section--soft" id="identidade" aria-labelledby="identidade-titulo">
+      <div class="cy-container cy-split">
+        <div><span class="cy-eyebrow">Nossa linguagem visual</span><h2 id="identidade-titulo">Cor que identifica.<br>Tipo que comunica.</h2><p class="cy-muted">Azul para a estrutura e as ações principais. Laranja para destacar o que merece atenção.</p><div class="cy-swatch cy-swatch--blue"><strong>Azul Cydak</strong><span>#004693</span></div><div class="cy-swatch cy-swatch--orange"><strong>Laranja Cydak</strong><span>#F4A220</span></div></div>
+        <div class="cy-card"><span class="cy-eyebrow">Tipografia</span><h2>Days One</h2><p>Títulos / peso regular 400</p><hr><h3>Precisão em cada detalhe.</h3><p><strong>Poppins</strong><br>Textos, navegação e controles / 400, 500, 600 e 700.</p><p>Aa Bb Cc Dd Ee Ff Gg<br>0123456789 · Á É Í Ó Ú Ç Ã Õ</p></div>
+      </div>
+    </section>
+    <section class="cy-section" id="componentes" aria-labelledby="componentes-titulo">
+      <div class="cy-container"><span class="cy-eyebrow">Elementos essenciais</span><h2 id="componentes-titulo">Prontos para combinar.</h2>
+        <div class="cy-split">
+          <div><h3>Ações e estados</h3><div class="cy-actions"><a class="cy-button" href="#uso">Ação principal</a><a class="cy-button cy-button--accent" href="#uso">Destaque</a><a class="cy-button cy-button--outline" href="#uso">Secundária</a><button class="cy-button" type="button" disabled>Indisponível</button></div><h3>Informação contextual</h3><p class="cy-note">Exemplo visual: os campos ao lado são demonstrativos e não enviam ou armazenam dados.</p><details class="cy-details" id="uso"><summary>Como usar em outro projeto?</summary><p>Copie a pasta assets e vincule cydak.css no HTML. Reutilize os componentes desta página e ajuste os tokens no início do CSS. Consulte o README para detalhes.</p></details></div>
+          <div class="cy-card"><h3>Campos de formulário</h3><label class="cy-field" for="nome">Nome do projeto<input class="cy-input" id="nome" name="nome" placeholder="Ex.: Portal de operações" aria-describedby="aviso-campos"></label><label class="cy-field" for="tipo">Tipo de interface<select class="cy-input" id="tipo" name="tipo"><option>Portal institucional</option><option>Painel de operações</option><option>Sistema interno</option></select></label><label class="cy-field" for="descricao">Descrição<textarea class="cy-input" id="descricao" name="descricao" rows="3" placeholder="Descreva o objetivo do projeto"></textarea></label><small id="aviso-campos" class="cy-muted">Demonstração de estilos, sem envio de dados.</small></div>
+        </div>
+      </div>
+    </section>
+    <section class="cy-section cy-dashboard" id="dashboard" data-dashboard aria-labelledby="dashboard-titulo">
+      <div class="cy-container">
+        <div class="cy-dashboard__heading">
+          <div><span class="cy-eyebrow">Visão da operação</span><span class="cy-dashboard__badge">Demonstração</span><h2 id="dashboard-titulo">Dashboard de produção</h2><p class="cy-muted">Dados fictícios para explorar os componentes. Escolha um turno para comparar os resultados.</p></div>
+          <label class="cy-field cy-dashboard__filter" for="dashboard-turno">Turno demonstrativo<select class="cy-input" id="dashboard-turno"><option value="morning">Manhã · 06h às 12h</option><option value="afternoon">Tarde · 12h às 18h</option><option value="night">Noite · 18h às 00h</option></select></label>
+        </div>
+        <noscript><p class="cy-note">Ative o JavaScript para visualizar os indicadores e gráficos demonstrativos.</p></noscript>
+        <div class="cy-dashboard__kpis">
+          <article class="cy-card cy-kpi"><span class="cy-kpi__label">Produção total</span><strong data-kpi="production">—</strong><small>Peças produzidas no turno</small></article>
+          <article class="cy-card cy-kpi"><span class="cy-kpi__label">Atingimento da meta</span><strong data-kpi="target">—</strong><small>Meta: 1.500 peças / turno</small></article>
+          <article class="cy-card cy-kpi"><span class="cy-kpi__label">Qualidade</span><strong data-kpi="quality">—</strong><small>Aprovadas sem retrabalho / total</small></article>
+          <article class="cy-card cy-kpi"><span class="cy-kpi__label">Refugo</span><strong data-kpi="rejected">—</strong><small>Peças refugadas no turno</small></article>
+        </div>
+        <div class="cy-dashboard__charts">
+          <article class="cy-card cy-chart cy-chart--wide" aria-labelledby="grafico-linha-titulo"><h3 id="grafico-linha-titulo">Ritmo de produção</h3><p class="cy-chart__subtitle">Peças por hora · realizado e meta</p><div class="cy-chart__legend"><span><i class="cy-chart__key" aria-hidden="true"></i>Realizado — linha contínua</span><span><i class="cy-chart__key cy-chart__key--1" aria-hidden="true"></i>Meta — linha tracejada</span></div><div class="cy-chart__canvas" data-chart="line"></div><details><summary>Consultar dados por hora</summary><div class="cy-chart__table" data-table="line"></div></details></article>
+          <article class="cy-card cy-chart" aria-labelledby="grafico-barra-titulo"><h3 id="grafico-barra-titulo">Produção por linha</h3><p class="cy-chart__subtitle">Total de peças · quatro linhas demonstrativas</p><div class="cy-chart__canvas" data-chart="bar"></div><details><summary>Consultar dados por linha</summary><div class="cy-chart__table" data-table="bar"></div></details></article>
+          <article class="cy-card cy-chart" aria-labelledby="grafico-pizza-titulo"><h3 id="grafico-pizza-titulo">Distribuição de qualidade</h3><p class="cy-chart__subtitle">Classificação das peças produzidas no turno</p><div class="cy-chart__canvas cy-chart__pie" data-chart="pie"></div><ul class="cy-chart__pie-legend" data-pie-legend></ul></article>
+        </div>
+        <p class="cy-dashboard__status" data-dashboard-status role="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+  <footer class="cy-footer"><div class="cy-container cy-footer__inner"><p>CYDAK · Base visual para novos projetos</p><a href="https://cydak.com.br/">Site de referência ↗</a></div></footer>
+  </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+/* Navegação inspirada no MES_CYDAK; independente de Blazor e Bootstrap. */
+.cy-app { display: flex; min-height: 100vh; }
+.cy-app__content { flex: 1; min-width: 0; }
+.cy-sidebar { flex: 0 0 250px; width: 250px; height: 100vh; height: 100dvh; position: sticky; top: 0; display: flex; flex-direction: column; background: linear-gradient(180deg, #004693, #003570); color: #e3edfa; box-shadow: 2px 0 10px #00000026; z-index: 5; transition: width .3s ease, flex-basis .3s ease; }
+.cy-sidebar__brand { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 12px; min-height: 72px; background: #004693; }
+.cy-sidebar .cy-brand { gap: 6px; }
+.cy-sidebar .cy-brand__icon { width: 36px; height: 36px; }
+.cy-sidebar .cy-brand__logo { width: 120px; min-height: 36px; padding: 6px; }
+.cy-sidebar__toggle { display: grid; place-items: center; flex: none; width: 36px; height: 40px; padding: 0; background: transparent; color: #e3edfa; border: 0; border-radius: 6px; cursor: pointer; }
+.cy-sidebar__toggle[hidden] { display: none; }
+.cy-sidebar :focus-visible { outline: 2px solid #00d2ff; outline-offset: -2px; }
+.cy-sidebar__nav { flex: 1; min-height: 0; overflow: auto; padding: 12px 10px; }
+.cy-sidebar__section { margin: 22px 14px 6px; color: #c5d9ef; font-size: .68rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.cy-sidebar__link, .cy-sidebar__group > summary { display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 12px; border-left: 4px solid transparent; border-radius: 6px; color: #e3edfa; font-size: .875rem; line-height: 1.5; text-decoration: none; cursor: pointer; overflow-wrap: anywhere; }
+.cy-sidebar__link:hover, .cy-sidebar__group > summary:hover, .cy-sidebar__toggle:hover { color: #fff; background: #ffffff0d; }
+.cy-sidebar__link[aria-current] { background: #ffffff1f; border-left-color: #00d2ff; color: #fff; }
+.cy-sidebar__icon { width: 20px; height: 20px; flex: 0 0 20px; }
+.cy-sidebar__group > summary { list-style: none; }
+.cy-sidebar__group > summary::-webkit-details-marker { display: none; }
+.cy-sidebar__group > summary > svg:last-child { margin-left: auto; width: 14px; flex-basis: 14px; transition: transform .2s; }
+.cy-sidebar__group[open] > summary > svg:last-child { transform: rotate(90deg); }
+.cy-sidebar__submenu { margin-left: 16px; border-left: 1px solid #ffffff26; }
+.cy-sidebar__footer { padding: 16px; border-top: 1px solid #ffffff1f; background: #0000002e; }
+.cy-sidebar__caption { display: block; margin-bottom: 10px; font-size: .75rem; }
+.cy-sidebar .cy-theme-toggle { width: 100%; color: #cbd5e1; font-size: .75rem; padding: 8px; }
+.cy-sidebar .cy-theme-toggle:hover { background: #ffffff0d; }
+@media (min-width: 641px) {
+  .cy-sidebar--collapsed { width: 60px; flex-basis: 60px; }
+  .cy-sidebar--collapsed .cy-sidebar__brand { padding: 12px; }
+  .cy-sidebar--collapsed .cy-brand, .cy-sidebar--collapsed .cy-sidebar__section, .cy-sidebar--collapsed .cy-sidebar__caption, .cy-sidebar--collapsed .cy-sidebar__group > summary > svg:last-child { display: none; }
+  .cy-sidebar--collapsed .cy-sidebar__label { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .cy-sidebar--collapsed .cy-sidebar__nav { padding-inline: 0; }
+  .cy-sidebar--collapsed .cy-sidebar__link, .cy-sidebar--collapsed .cy-sidebar__group > summary { padding-inline: 16px; }
+  .cy-sidebar--collapsed .cy-sidebar__submenu { display: none; }
+  .cy-sidebar--collapsed .cy-sidebar__footer { padding: 6px; }
+  .cy-sidebar--collapsed .cy-theme-toggle { white-space: normal; font-size: .65rem; padding: 6px 2px; }
+}
+@media (min-width: 641px) and (max-width: 1100px) {
+  .cy-app .cy-hero__grid, .cy-app .cy-split, .cy-app .cy-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 640px) {
+  .cy-app { flex-direction: column; }
+  .cy-sidebar { position: relative; width: 100%; height: auto; max-height: 55vh; max-height: 55dvh; flex: none; }
+  .cy-sidebar__brand { min-height: 60px; }
+  .cy-sidebar__footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px 16px; }
+  .cy-sidebar__caption { margin: 0; }
+  .cy-sidebar .cy-theme-toggle { width: auto; min-height: 40px; }
+  .cy-sidebar--collapsed .cy-sidebar__nav, .cy-sidebar--collapsed .cy-sidebar__footer { display: none; }
+}
