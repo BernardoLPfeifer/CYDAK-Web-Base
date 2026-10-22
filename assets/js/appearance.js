@@ -17,16 +17,32 @@
     industrial: { name: 'Industrial', description: 'Linhas fortes, faixas de sinalização e controles robustos.' },
     editorial: { name: 'Editorial', description: 'Títulos serifados, linhas finas e composição elegante.' }
   };
-  let choice = { palette: 'cydak', style: 'standard' };
+  const logos = {
+    'ams-gestao-ativos': { name: 'Rede de ativos', file: 'ams-gestao-ativos.png' },
+    'ativos-industriais': { name: 'Ativos industriais', file: 'ativos-industriais.png' },
+    'identidade-digital': { name: 'Identidade digital', file: 'identidade-digital.png' },
+    'escudo-rota': { name: 'Escudo e rota', file: 'escudo-rota.png' },
+    'ciclo-ativos': { name: 'Ciclo de ativos', file: 'ciclo-ativos.png' },
+    'rede-organizada': { name: 'Rede organizada', file: 'rede-organizada.png' },
+    'bussola-ativos': { name: 'Bússola de ativos', file: 'bussola-ativos.png' },
+    'asset-link': { name: 'Asset Link', file: 'asset-link.png' },
+    'inventario-inteligente': { name: 'Inventário inteligente', file: 'inventario-inteligente.png' },
+    'rfid': { name: 'RFID', file: 'rfid.png' },
+    'controle-ativos': { name: 'Controle de ativos', file: 'controle-ativos.png' },
+    'gestao-ativos': { name: 'Gestão de ativos', file: 'gestao-ativos.png' },
+    'monograma-ams': { name: 'Monograma AMS', file: 'monograma-ams.png' }
+  };
+  let choice = { palette: 'cydak', style: 'standard', logo: 'ams-gestao-ativos' };
   function read(value) {
     try {
       const parsed = JSON.parse(value);
       const savedStyle = ({ soft: 'editorial', compact: 'minimal' })[parsed?.style] || parsed?.style;
       choice = {
         palette: Object.hasOwn(palettes, parsed?.palette) ? parsed.palette : 'cydak',
-        style: Object.hasOwn(styles, savedStyle) ? savedStyle : 'standard'
+        style: Object.hasOwn(styles, savedStyle) ? savedStyle : 'standard',
+        logo: Object.hasOwn(logos, parsed?.logo) ? parsed.logo : 'ams-gestao-ativos'
       };
-    } catch { choice = { palette: 'cydak', style: 'standard' }; }
+    } catch { choice = { palette: 'cydak', style: 'standard', logo: 'ams-gestao-ativos' }; }
   }
   try { read(localStorage.getItem(key)); } catch {}
   function apply() {
@@ -36,10 +52,17 @@
     root.style.setProperty('--cy-palette-light', light);
     root.dataset.visualStyle = choice.style;
     root.dataset.palette = choice.palette;
+    root.dataset.brandLogo = choice.logo;
+    const logo = logos[choice.logo];
+    document.querySelectorAll('[data-brand-image]').forEach(image => {
+      image.src = `assets/brand/ams/${logo.file}`;
+      image.closest('.cy-brand')?.setAttribute('aria-label', `CYDAK AMS — ${logo.name}`);
+    });
     document.querySelectorAll('[data-palette]').forEach(button => {
       if (button.tagName === 'BUTTON') button.setAttribute('aria-pressed', String(button.dataset.palette === choice.palette));
     });
     document.querySelectorAll('[data-style-choice]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.styleChoice === choice.style)));
+    document.querySelectorAll('[data-logo-choice]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.logoChoice === choice.logo)));
   }
   function save() {
     apply();
@@ -53,7 +76,8 @@
     dialog.setAttribute('aria-labelledby', 'aparencia-titulo');
     dialog.innerHTML = `
       <div class="cy-appearance__heading"><div><span class="cy-eyebrow">Personalize sua experiência</span><h2 id="aparencia-titulo">Aparência</h2></div><button type="button" class="cy-appearance__close" aria-label="Fechar aparência" autofocus>×</button></div>
-      <p class="cy-muted">Escolha a linguagem visual da interface e combine com sua paleta. Cada estilo transforma fundos, tipografia, menu e componentes.</p>
+      <p class="cy-muted">Escolha o logotipo, a linguagem visual e a paleta da interface. As opções ficam salvas neste navegador.</p>
+      <fieldset><legend>Logotipo CYDAK AMS</legend><p class="cy-appearance__intro">A versão selecionada se adapta automaticamente ao modo claro ou escuro.</p><div class="cy-appearance__logos">${Object.entries(logos).map(([id, logo]) => `<button type="button" data-logo-choice="${id}" class="cy-logo-choice"><span class="cy-logo-choice__preview"><img src="assets/brand/ams/${logo.file}" alt="" width="380" height="166" loading="lazy"></span><span>${logo.name}</span></button>`).join('')}</div></fieldset>
       <fieldset><legend>Paleta de cores</legend><div class="cy-appearance__palettes">${Object.entries(palettes).map(([id, palette]) => `<button type="button" data-palette="${id}" class="cy-appearance__option"><span class="cy-appearance__swatch" style="--swatch: ${palette.colors[0]}" aria-hidden="true"></span><span>${palette.name}<small>${palette.colors[0].toUpperCase()}</small></span></button>`).join('')}</div></fieldset>
       <fieldset><legend>Linguagem visual</legend><div class="cy-appearance__styles">${Object.entries(styles).map(([id, style]) => `<button type="button" data-style-choice="${id}" class="cy-appearance__option"><span class="cy-style-preview cy-style-preview--${id}" aria-hidden="true"><span class="cy-style-preview__rail"><i></i><i></i><i></i></span><span class="cy-style-preview__page"><span class="cy-style-preview__eyebrow">CYDAK / INTERFACE</span><span class="cy-style-preview__title">Forma &amp; função.</span><span class="cy-style-preview__line"></span><span class="cy-style-preview__cards"><i></i><i></i><i></i></span><span class="cy-style-preview__action"></span></span></span><span class="cy-style-choice__title">${style.name}</span><span class="cy-style-choice__description">${style.description}</span></button>`).join('')}</div></fieldset>
       <p class="cy-appearance__hint">As escolhas são salvas automaticamente. Feche o painel para explorar o resultado; o modo claro/escuro continua independente.</p>
@@ -73,8 +97,12 @@
       choice.style = button.dataset.styleChoice;
       save();
     }));
+    dialog.querySelectorAll('[data-logo-choice]').forEach(button => button.addEventListener('click', () => {
+      choice.logo = button.dataset.logoChoice;
+      save();
+    }));
     dialog.querySelector('[data-appearance-reset]').addEventListener('click', () => {
-      choice = { palette: 'cydak', style: 'standard' };
+      choice = { palette: 'cydak', style: 'standard', logo: 'ams-gestao-ativos' };
       save();
     });
     apply();

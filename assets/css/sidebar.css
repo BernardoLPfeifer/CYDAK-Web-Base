@@ -2,8 +2,11 @@
 .cy-app { display: flex; min-height: 100vh; }
 .cy-app__content { flex: 1; min-width: 0; }
 .cy-sidebar { flex: 0 0 250px; width: 250px; height: 100vh; height: 100dvh; position: sticky; top: 0; display: flex; flex-direction: column; background: linear-gradient(180deg, #004693, #003570); color: #e3edfa; box-shadow: 2px 0 10px #00000026; z-index: 5; transition: width .3s ease, flex-basis .3s ease; }
-.cy-sidebar__brand { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 12px; min-height: 72px; background: #004693; }
+.cy-sidebar__brand { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 12px; min-height: 82px; background: #004693; }
 .cy-sidebar .cy-brand { gap: 6px; }
+.cy-sidebar .cy-brand--ams { min-width: 0; flex: 1; }
+.cy-brand__selected { display: grid; place-items: center; width: 176px; height: 62px; min-width: 0; overflow: visible; padding: 5px; background: transparent; }
+.cy-brand__selected img { display: block; width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; }
 .cy-sidebar .cy-brand__icon { width: 36px; height: 36px; }
 .cy-sidebar .cy-brand__logo { width: 120px; min-height: 36px; padding: 6px; }
 .cy-sidebar__toggle { display: grid; place-items: center; flex: none; width: 36px; height: 40px; padding: 0; background: transparent; color: #e3edfa; border: 0; border-radius: 6px; cursor: pointer; }
